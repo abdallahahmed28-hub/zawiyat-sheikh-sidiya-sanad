@@ -4,9 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#073b4c">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
 <title>سَنَد | المعرفة الشرعية من مصدرها</title>
 
 <style>
@@ -14,299 +11,178 @@
   --navy:#073b4c;
   --navy2:#042d39;
   --teal:#0a8f98;
-  --teal2:#14b8a6;
   --orange:#ff8a4c;
   --gold:#d3a85e;
   --cream:#fffaf0;
-  --paper:#fffdf8;
-  --white:#ffffff;
   --text:#113943;
   --muted:#6f7f84;
   --line:#e2e8e7;
   --ok:#16805f;
-  --warn:#b56b25;
-  --danger:#a94646;
-  --shadow:0 12px 32px rgba(6,50,63,.11);
 }
 
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
 body{
   margin:0;
   background:#f1eee7;
   color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
 }
-
-button,
-input,
-textarea,
-select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
 
 .app{
-  width:min(100%,560px);
-  min-height:100vh;
+  max-width:560px;
   margin:auto;
+  min-height:100vh;
   background:var(--cream);
-  position:relative;
-  overflow:hidden;
-  padding-bottom:105px;
-  box-shadow:0 0 50px rgba(0,0,0,.08);
+  padding-bottom:95px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .hero{
-  min-height:440px;
-  position:relative;
-  overflow:hidden;
+  padding:20px 18px 34px;
   color:#fff;
-  padding:22px 19px 34px;
   background:
-    radial-gradient(circle at 13% 9%,rgba(255,138,76,.20),transparent 25%),
-    radial-gradient(circle at 88% 35%,rgba(20,184,166,.18),transparent 30%),
+    radial-gradient(circle at 10% 15%,rgba(255,138,76,.22),transparent 27%),
     linear-gradient(145deg,#07546b,#073b4c 55%,#032834);
 }
 
-.hero:before{
-  content:"";
-  position:absolute;
-  width:430px;
-  height:430px;
-  border:1px solid rgba(211,168,94,.20);
-  border-radius:50%;
-  top:-290px;
-  right:-120px;
-}
-
-.topbar{
-  position:relative;
-  z-index:2;
+.top{
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
+.logo-wrap{display:flex;align-items:center;gap:8px}
 
-.logo-img{
-  width:61px;
-  height:75px;
-  border-radius:18px;
+.logo{
+  width:58px;
+  height:72px;
+  border-radius:17px;
   object-fit:cover;
-  background:#0a3542;
   border:1px solid rgba(246,207,137,.7);
-  box-shadow:0 7px 18px rgba(0,0,0,.18);
+  background:#0a3542;
 }
 
 .logo-fallback{
-  width:61px;
-  height:75px;
   display:none;
+  width:58px;
+  height:72px;
+  border-radius:17px;
   align-items:center;
   justify-content:center;
   text-align:center;
-  border-radius:18px;
-  border:1px solid rgba(246,207,137,.7);
-  color:#f0cf91;
   font-size:10px;
+  color:#f0cf91;
+  border:1px solid rgba(246,207,137,.7);
   background:#0a3542;
 }
 
-.top-actions{
-  display:flex;
-  gap:7px;
-}
-
 .pill{
-  border:1px solid rgba(255,255,255,.20);
+  border:1px solid rgba(255,255,255,.2);
   background:rgba(4,34,43,.45);
-  color:#fff;
+  color:white;
   border-radius:999px;
-  padding:9px 12px;
+  padding:8px 11px;
 }
 
-.brand{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  margin-top:24px;
-}
-
+.brand{text-align:center;margin-top:24px}
 .brand h1{
   margin:0;
-  font-size:69px;
+  font-size:66px;
   line-height:1;
   color:#fffaf0;
-  letter-spacing:-4px;
 }
-
-.brand .tagline{
+.brand h2{
+  margin:10px 0 14px;
   font-size:19px;
-  font-weight:800;
-  margin:10px 0 15px;
 }
-
-.production{
-  line-height:1.85;
+.brand p{
+  margin:0;
+  line-height:1.8;
   font-size:13px;
-  color:#e6eeee;
+  color:#e5eeee;
 }
-
-.production b{
-  color:#fff;
-}
-
-.motto{
+.brand .motto{
   margin-top:10px;
   color:#ffad73;
   font-weight:900;
 }
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-shell{
+.search-wrap{
+  margin:-25px 17px 0;
   position:relative;
-  z-index:5;
-  margin:-28px 17px 0;
+  z-index:4;
 }
 
 .search{
-  min-height:65px;
-  border-radius:24px;
   background:#fff;
+  border-radius:22px;
+  padding:8px 12px;
   display:flex;
   align-items:center;
   gap:8px;
-  padding:7px 12px;
-  box-shadow:var(--shadow);
+  box-shadow:0 12px 28px rgba(6,50,63,.13);
 }
 
 .search input{
-  width:100%;
   border:0;
   outline:0;
+  width:100%;
+  padding:10px 5px;
   background:transparent;
-  padding:10px 7px;
   text-align:right;
-  color:var(--text);
 }
 
 .search button{
   border:0;
-  background:transparent;
+  background:none;
   font-size:22px;
 }
 
-/* =========================
-   QUICK ACTIONS
-========================= */
-
 .quick{
-  padding:18px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:11px;
+  padding:18px;
 }
 
-.quick-card{
-  min-height:126px;
+.quick button{
+  min-height:120px;
   border:0;
-  border-radius:22px;
-  padding:16px 10px;
+  border-radius:21px;
+  padding:15px;
   text-align:center;
-  box-shadow:0 8px 22px rgba(6,50,63,.07);
 }
 
-.quick-card span{
+.quick span{
   display:block;
-  font-size:32px;
-  margin-bottom:8px;
+  font-size:30px;
+  margin-bottom:7px;
 }
 
-.quick-card b{
+.quick b{
   display:block;
   font-size:17px;
   margin-bottom:4px;
 }
 
-.quick-card small{
-  font-size:12px;
-  line-height:1.45;
-}
+.quick small{font-size:12px}
 
-.q1{
-  background:linear-gradient(145deg,#0a8f98,#066478);
-  color:#fff;
-}
+.q1{background:linear-gradient(145deg,#0a8f98,#066478);color:#fff}
+.q2{background:#fff7e8;color:var(--text);border:1px solid #ecd7ad}
+.q3{background:linear-gradient(145deg,#ffae77,#ff844c);color:#fff}
+.q4{background:linear-gradient(145deg,#13a8a7,#08757e);color:#fff}
 
-.q2{
-  background:#fff7e8;
-  border:1px solid #ecd7ad;
-  color:var(--text);
-}
-
-.q3{
-  background:linear-gradient(145deg,#ffae77,#ff844c);
-  color:#fff;
-}
-
-.q4{
-  background:linear-gradient(145deg,#13a8a7,#08757e);
-  color:#fff;
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.about,
 .box{
   margin:0 18px 18px;
-  background:#fff;
+  background:white;
   border:1px solid var(--line);
-  border-radius:22px;
-  padding:18px;
+  border-radius:20px;
+  padding:17px;
 }
 
-.about{
-  background:linear-gradient(135deg,#fff7e8,#fff);
-  display:flex;
-  gap:13px;
-}
-
-.about .icon{
-  font-size:29px;
-}
-
-.about h3,
-.box h3{
-  margin:0 0 7px;
-}
-
-.about p,
-.muted{
+.box h3{margin:0 0 7px}
+.box p{
   margin:0;
   color:var(--muted);
   font-size:13px;
@@ -314,27 +190,12 @@ button{
 }
 
 .section{
-  padding:0 18px 22px;
+  padding:0 18px 20px;
 }
 
-.section-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:12px;
-}
-
-.section-title h2{
-  margin:0;
+.section h2{
+  margin:0 0 12px;
   font-size:22px;
-}
-
-.section-title button{
-  border:0;
-  border-radius:999px;
-  background:#f4e7ce;
-  color:var(--text);
-  padding:7px 12px;
 }
 
 .grid{
@@ -345,30 +206,26 @@ button{
 
 .cat{
   border:1px solid var(--line);
-  border-radius:20px;
   background:#fff;
-  min-height:139px;
-  padding:16px 12px;
+  border-radius:19px;
+  min-height:130px;
+  padding:15px;
   text-align:center;
 }
 
 .cat .icon{
-  width:52px;
-  height:52px;
-  border-radius:16px;
+  width:50px;
+  height:50px;
+  margin:0 auto 8px;
+  border-radius:15px;
   display:grid;
   place-items:center;
-  margin:0 auto 9px;
   background:#eaf7f4;
-  font-size:27px;
-}
-
-.cat:nth-child(even) .icon{
-  background:#fff0dc;
+  font-size:26px;
 }
 
 .cat h3{
-  margin:0 0 5px;
+  margin:0 0 4px;
   font-size:16px;
 }
 
@@ -376,133 +233,81 @@ button{
   margin:0;
   font-size:12px;
   color:var(--muted);
-  line-height:1.45;
 }
 
 .verse{
   margin:0 18px 18px;
-  border-radius:23px;
-  color:#fff;
-  padding:20px;
   background:linear-gradient(120deg,#073b4c,#07606b);
-}
-
-.verse small{
-  color:#ffb276;
+  color:#fff;
+  border-radius:22px;
+  padding:19px;
 }
 
 .verse blockquote{
+  margin:8px 0;
   font-size:22px;
   font-weight:900;
   line-height:1.8;
-  margin:9px 0;
 }
-
-.trust-row{
-  display:flex;
-  gap:10px;
-  padding:10px 0;
-  border-bottom:1px solid #eef1f1;
-}
-
-.trust-row:last-child{
-  border:0;
-}
-
-.trust-dot{
-  width:30px;
-  height:30px;
-  flex:none;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:#e7f4ed;
-  color:var(--ok);
-  font-weight:900;
-}
-
-/* =========================
-   PAGES
-========================= */
 
 .page{
   display:none;
-  padding:22px 18px;
-  animation:fade .2s ease;
+  padding:20px 18px;
 }
 
-.page.active{
-  display:block;
-}
+.page.active{display:block}
 
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(6px);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
-
-.page-head{
+.head{
   display:flex;
   align-items:center;
-  gap:11px;
-  margin-bottom:18px;
+  gap:10px;
+  margin-bottom:17px;
 }
 
 .back{
-  width:42px;
-  height:42px;
+  width:40px;
+  height:40px;
   border:0;
   border-radius:50%;
-  background:#fff;
-  box-shadow:0 5px 16px rgba(0,0,0,.08);
-  font-size:19px;
-}
-
-.page-head h2{
-  margin:0;
+  background:white;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .card{
-  background:#fff;
+  background:white;
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:17px;
+  border-radius:19px;
+  padding:16px;
   margin-bottom:12px;
 }
 
 .input{
   width:100%;
-  min-height:50px;
   border:1px solid #dde5e5;
   background:#fafcfb;
-  border-radius:15px;
-  padding:13px;
+  border-radius:14px;
+  padding:12px;
   outline:0;
   text-align:right;
 }
 
 textarea.input{
-  min-height:122px;
+  min-height:115px;
   resize:vertical;
 }
 
 .btn{
   width:100%;
   border:0;
-  border-radius:15px;
-  padding:13px;
-  margin-top:9px;
-  font-weight:900;
+  border-radius:14px;
+  padding:12px;
+  margin-top:8px;
+  font-weight:800;
 }
 
 .primary{
   background:linear-gradient(135deg,#0a8f98,#056171);
-  color:#fff;
+  color:white;
 }
 
 .secondary{
@@ -513,9 +318,9 @@ textarea.input{
 
 .result{
   display:none;
-  margin-top:13px;
-  padding:15px;
-  border-radius:16px;
+  margin-top:12px;
+  padding:14px;
+  border-radius:15px;
   background:#edf8f5;
   border-right:4px solid var(--ok);
   line-height:1.8;
@@ -527,149 +332,69 @@ textarea.input{
   border-right-color:var(--orange);
 }
 
-.badge{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:999px;
-  font-size:11px;
-  font-weight:900;
-  margin-bottom:7px;
-  background:#e7f4ed;
-  color:var(--ok);
+.book{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.badge.warn{
-  background:#fff0dd;
-  color:#a65f1f;
+.cover{
+  width:54px;
+  height:68px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#073b4c,#0a8f98);
+  color:#f0ce92;
+  font-size:24px;
+  flex:none;
 }
 
-.source-card{
+.book h4{margin:0 0 4px}
+.book p{margin:0;font-size:12px;color:var(--muted)}
+
+.open{
+  margin-right:auto;
+  border:0;
+  background:#eaf7f4;
+  color:var(--text);
+  padding:8px 10px;
+  border-radius:11px;
+}
+
+.source{
   margin-top:10px;
-  padding:12px;
+  padding:11px;
+  border-radius:13px;
   background:#f6faf9;
-  border-radius:14px;
   border:1px solid #e3e9e8;
   font-size:12px;
   line-height:1.7;
 }
 
-.source-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:7px;
-  margin-top:8px;
+.badge{
+  display:inline-block;
+  padding:5px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  background:#e7f4ed;
+  color:#16805f;
+  margin-bottom:7px;
 }
-
-.source-cell{
-  padding:8px;
-  background:#fff;
-  border-radius:10px;
-  border:1px solid #edf0f0;
-}
-
-/* =========================
-   BOOKS
-========================= */
-
-.book{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  cursor:pointer;
-}
-
-.cover{
-  width:57px;
-  height:72px;
-  flex:none;
-  border-radius:10px;
-  display:grid;
-  place-items:center;
-  color:#f0ce92;
-  font-size:25px;
-  background:linear-gradient(145deg,#073b4c,#0a8f98);
-}
-
-.book h4{
-  margin:0 0 4px;
-}
-
-.book p{
-  margin:0;
-  color:var(--muted);
-  font-size:12px;
-}
-
-.book .open{
-  margin-right:auto;
-  border:0;
-  background:#eaf7f4;
-  padding:8px 10px;
-  border-radius:12px;
-  color:var(--text);
-}
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-  display:none;
-  position:fixed;
-  z-index:100;
-  inset:0;
-  background:rgba(2,28,36,.62);
-  align-items:flex-end;
-  justify-content:center;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.sheet{
-  width:min(100%,560px);
-  max-height:88vh;
-  overflow:auto;
-  background:var(--cream);
-  border-radius:27px 27px 0 0;
-  padding:19px;
-}
-
-.sheet-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
-}
-
-.close{
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:#eef2f2;
-  font-size:19px;
-}
-
-/* =========================
-   NAV
-========================= */
 
 .bottom{
   position:fixed;
   bottom:0;
   left:50%;
   transform:translateX(-50%);
-  z-index:50;
   width:min(100%,560px);
-  height:84px;
+  height:80px;
   display:grid;
   grid-template-columns:repeat(5,1fr);
   background:rgba(255,255,255,.97);
-  backdrop-filter:blur(15px);
   border-top:1px solid var(--line);
-  padding:7px 6px max(7px,env(safe-area-inset-bottom));
+  z-index:50;
 }
 
 .nav{
@@ -684,9 +409,7 @@ textarea.input{
   font-size:11px;
 }
 
-.nav span{
-  font-size:22px;
-}
+.nav span{font-size:21px}
 
 .nav.active{
   color:#ea733a;
@@ -695,47 +418,59 @@ textarea.input{
 
 .ask-nav{
   position:relative;
-  top:-17px;
+  top:-15px;
 }
 
 .ask-nav span{
-  width:58px;
-  height:58px;
+  width:54px;
+  height:54px;
   border-radius:50%;
   display:grid;
   place-items:center;
   background:linear-gradient(145deg,#ff9a5e,#ee6d32);
-  color:#fff;
-  border:4px solid #fff;
-  box-shadow:0 8px 20px rgba(238,109,50,.30);
+  color:white;
+  border:4px solid white;
 }
 
-.report{
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(2,28,36,.62);
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal.show{display:flex}
+
+.sheet{
+  width:min(100%,560px);
+  background:var(--cream);
+  border-radius:25px 25px 0 0;
+  padding:18px;
+  max-height:88vh;
+  overflow:auto;
+}
+
+.sheet-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.close{
+  width:36px;
+  height:36px;
   border:0;
-  background:none;
-  color:#a35a3e;
-  padding:5px 0;
-  font-size:12px;
+  border-radius:50%;
+  background:#eef2f2;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media(min-width:700px){
-  body{
-    padding:28px 0;
-  }
-
-  .app{
-    border-radius:30px;
-  }
-
-  .bottom{
-    bottom:18px;
-    border-radius:24px;
-    box-shadow:0 14px 35px rgba(0,0,0,.12);
-  }
+  body{padding:25px 0}
+  .app{border-radius:28px}
+  .bottom{bottom:16px;border-radius:22px}
 }
 </style>
 </head>
@@ -744,37 +479,28 @@ textarea.input{
 
 <main class="app">
 
-<!-- =========================
-     HOME
-========================= -->
-
 <section id="home">
 
 <header class="hero">
 
-  <div class="topbar">
+  <div class="top">
 
     <div class="logo-wrap">
 
       <img
         src="logo.jpeg"
-        class="logo-img"
+        class="logo"
         alt="زاوية الشيخ سيديا الكبير"
-        onerror="
-          this.style.display='none';
-          this.nextElementSibling.style.display='flex';
-        "
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
       >
 
       <div class="logo-fallback">
-        زاوية<br>
-        الشيخ سيديا<br>
-        الكبير
+        زاوية<br>الشيخ سيديا<br>الكبير
       </div>
 
     </div>
 
-    <div class="top-actions">
+    <div>
       <button class="pill">🌐 العربية</button>
       <button class="pill">🔔</button>
     </div>
@@ -785,17 +511,12 @@ textarea.input{
 
     <h1>سَنَد</h1>
 
-    <div class="tagline">
-      المعرفة الشرعية من مصدرها
-    </div>
+    <h2>المعرفة الشرعية من مصدرها</h2>
 
-    <div class="production">
-      من إنتاج
-      <b>زاوية الشيخ سيديا الكبير</b>
-      <br>
-      بإشراف الرئيس
-      <b>الشيخ إسحاق ولد موسى ولد الشيخ سيديا</b>
-    </div>
+    <p>
+      من إنتاج <b>زاوية الشيخ سيديا الكبير</b><br>
+      بإشراف الرئيس <b>الشيخ إسحاق ولد موسى ولد الشيخ سيديا</b>
+    </p>
 
     <div class="motto">
       عِلمٌ · تربيةٌ · إصلاح
@@ -805,15 +526,10 @@ textarea.input{
 
 </header>
 
-<!-- SEARCH -->
-
-<div class="search-shell">
-
+<div class="search-wrap">
   <div class="search">
 
-    <button onclick="runMainSearch()">
-      ⌕
-    </button>
+    <button onclick="runMainSearch()">⌕</button>
 
     <input
       id="mainSearch"
@@ -821,4 +537,934 @@ textarea.input{
       onkeydown="if(event.key==='Enter')runMainSearch()"
     >
 
-    <button onclick="showPage('searchPage')">
+    <button onclick="showPage('searchPage')">☷</button>
+
+  </div>
+</div>
+
+<div class="quick">
+
+  <button class="q1" onclick="showPage('askPage')">
+    <span>💬</span>
+    <b>اسأل بسَنَد</b>
+    <small>إجابة من البيانات الموثقة</small>
+  </button>
+
+  <button class="q2" onclick="showPage('libraryPage')">
+    <span>📚</span>
+    <b>ابحث في الكتب</b>
+    <small>فتح الكتب وبياناتها</small>
+  </button>
+
+  <button class="q3" onclick="showPage('verifyPage')">
+    <span>🛡️</span>
+    <b>تحقق من قول</b>
+    <small>تحقق قبل أن تنشر</small>
+  </button>
+
+  <button class="q4" onclick="showPage('comparePage')">
+    <span>⚖️</span>
+    <b>قارن الأقوال</b>
+    <small>لا مقارنة بلا مصادر</small>
+  </button>
+
+</div>
+
+<div class="box">
+
+  <h3>ما هو تطبيق سَنَد؟</h3>
+
+  <p>
+    منصة معرفية إسلامية للبحث والسؤال والتحقق،
+    تربط المعلومة بمصدرها،
+    وتوضح حالة التوثيق،
+    ولا تجزم عند نقص الأدلة.
+  </p>
+
+</div>
+
+<section class="section">
+
+  <h2>الأقسام الرئيسية</h2>
+
+  <div class="grid">
+
+    <button class="cat" onclick="showPage('quranPage')">
+      <div class="icon">📖</div>
+      <h3>القرآن والتفسير</h3>
+      <p>آيات · مواضع · مصادر</p>
+    </button>
+
+    <button class="cat" onclick="showPage('hadithPage')">
+      <div class="icon">🕌</div>
+      <h3>الحديث الشريف</h3>
+      <p>حديث · راوي · تخريج</p>
+    </button>
+
+    <button class="cat" onclick="showPage('fiqhPage')">
+      <div class="icon">⚖️</div>
+      <h3>الفقه والمذاهب</h3>
+      <p>جاهز للربط بالمصادر</p>
+    </button>
+
+    <button class="cat" onclick="showPage('libraryPage')">
+      <div class="icon">📚</div>
+      <h3>المكتبة الإسلامية</h3>
+      <p>كتب قابلة للفتح والبحث</p>
+    </button>
+
+    <button class="cat" onclick="showPage('studentPage')">
+      <div class="icon">🎓</div>
+      <h3>طالب العلم</h3>
+      <p>متون ومسارات</p>
+    </button>
+
+    <button class="cat" onclick="showPage('verifyPage')">
+      <div class="icon">🔎</div>
+      <h3>المحقق</h3>
+      <p>تحقق من الأقوال والنصوص</p>
+    </button>
+
+  </div>
+
+</section>
+
+<div class="verse">
+  <small>آية موثقة</small>
+  <blockquote>﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾</blockquote>
+  <div>سورة طه · الآية 114</div>
+</div>
+
+<div class="box">
+
+  <h3>منهج التوثيق</h3>
+
+  <p>
+    ✓ المصدر أولًا<br>
+    ✓ فصل النص الأصلي عن الشرح<br>
+    ✓ لا نُنشئ مرجعًا أو حكمًا من عندنا<br>
+    ✓ عند نقص المصادر تظهر عبارة «مصادر غير كافية»
+  </p>
+
+</div>
+
+</section>
+
+<section id="askPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>اسأل بسَنَد</h2>
+  </div>
+
+  <div class="card">
+
+    <textarea
+      id="askInput"
+      class="input"
+      placeholder="اكتب سؤالك..."
+    ></textarea>
+
+    <button class="btn primary" onclick="answerQuestion()">
+      البحث والإجابة
+    </button>
+
+    <div id="askResult" class="result"></div>
+
+  </div>
+
+  <div class="card">
+
+    <button class="btn secondary" onclick="presetAsk('وقل رب زدني علما')">
+      ﴿وقل رب زدني علمًا﴾
+    </button>
+
+    <button class="btn secondary" onclick="presetAsk('خيركم من تعلم القرآن وعلمه')">
+      خيركم من تعلم القرآن وعلمه
+    </button>
+
+    <button class="btn secondary" onclick="presetAsk('من يرد الله به خيرا يفقهه في الدين')">
+      من يرد الله به خيرًا يفقهه في الدين
+    </button>
+
+  </div>
+
+</section>
+
+<section id="verifyPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>المحقق</h2>
+  </div>
+
+  <div class="card">
+
+    <textarea
+      id="verifyInput"
+      class="input"
+      placeholder="ألصق النص هنا..."
+    ></textarea>
+
+    <button class="btn primary" onclick="verifyText()">
+      تحقق الآن
+    </button>
+
+    <div id="verifyResult" class="result"></div>
+
+  </div>
+
+</section>
+
+<section id="libraryPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>المكتبة الإسلامية</h2>
+  </div>
+
+  <div class="card">
+    <input
+      id="bookSearch"
+      class="input"
+      placeholder="ابحث باسم الكتاب أو المؤلف..."
+      oninput="renderBooks()"
+    >
+  </div>
+
+  <div id="booksList"></div>
+
+</section>
+
+<section id="quranPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>القرآن والتفسير</h2>
+  </div>
+
+  <div id="quranList"></div>
+
+</section>
+
+<section id="hadithPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>الحديث الشريف</h2>
+  </div>
+
+  <div class="card">
+
+    <input
+      id="hadithInput"
+      class="input"
+      placeholder="اكتب جزءًا من الحديث..."
+    >
+
+    <button class="btn primary" onclick="searchHadith()">
+      بحث
+    </button>
+
+    <div id="hadithResult" class="result"></div>
+
+  </div>
+
+  <div id="hadithList"></div>
+
+</section>
+
+<section id="fiqhPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>الفقه والمذاهب</h2>
+  </div>
+
+  <div class="card">
+
+    <button class="btn secondary" onclick="fiqhTopic('الطهارة')">
+      الطهارة
+    </button>
+
+    <button class="btn secondary" onclick="fiqhTopic('الصلاة')">
+      الصلاة
+    </button>
+
+    <button class="btn secondary" onclick="fiqhTopic('الصيام')">
+      الصيام
+    </button>
+
+    <button class="btn secondary" onclick="fiqhTopic('الزكاة')">
+      الزكاة
+    </button>
+
+    <div id="fiqhResult" class="result"></div>
+
+  </div>
+
+</section>
+
+<section id="comparePage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>قارن الأقوال</h2>
+  </div>
+
+  <div class="card">
+
+    <input
+      id="compareInput"
+      class="input"
+      placeholder="اكتب المسألة..."
+    >
+
+    <button class="btn primary" onclick="compareOpinions()">
+      إنشاء المقارنة
+    </button>
+
+    <div id="compareResult" class="result"></div>
+
+  </div>
+
+</section>
+
+<section id="studentPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>طالب العلم</h2>
+  </div>
+
+  <div class="card">
+
+    <button class="btn secondary" onclick="saveItem('مسار الأجرومية')">
+      الأجرومية
+    </button>
+
+    <button class="btn secondary" onclick="saveItem('مسار الشاطبية')">
+      الشاطبية
+    </button>
+
+    <button class="btn secondary" onclick="saveItem('مسار المرشد المعين')">
+      المرشد المعين
+    </button>
+
+    <button class="btn secondary" onclick="saveItem('مسار مختصر خليل')">
+      مختصر خليل
+    </button>
+
+  </div>
+
+</section>
+
+<section id="searchPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>البحث الشامل</h2>
+  </div>
+
+  <div class="card">
+
+    <input
+      id="searchInput"
+      class="input"
+      placeholder="ابحث..."
+    >
+
+    <button class="btn primary" onclick="globalSearch()">
+      بحث
+    </button>
+
+    <div id="searchResult" class="result"></div>
+
+  </div>
+
+</section>
+
+<section id="savedPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>المحفوظات</h2>
+  </div>
+
+  <div id="savedList"></div>
+
+</section>
+
+<section id="accountPage" class="page">
+
+  <div class="head">
+    <button class="back" onclick="goHome()">←</button>
+    <h2>حسابي</h2>
+  </div>
+
+  <div class="card">
+
+    <h3>سَنَد</h3>
+
+    <p>
+      من إنتاج زاوية الشيخ سيديا الكبير.
+    </p>
+
+    <p>
+      بإشراف الرئيس الشيخ إسحاق ولد موسى ولد الشيخ سيديا.
+    </p>
+
+    <p>
+      نسخة HTML 0.2
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<nav class="bottom">
+
+  <button class="nav active" data-page="home" onclick="goHome()">
+    <span>⌂</span>
+    الرئيسية
+  </button>
+
+  <button class="nav" data-page="libraryPage" onclick="showPage('libraryPage')">
+    <span>📖</span>
+    المكتبة
+  </button>
+
+  <button class="nav ask-nav" data-page="askPage" onclick="showPage('askPage')">
+    <span>💬</span>
+    اسأل
+  </button>
+
+  <button class="nav" data-page="savedPage" onclick="openSaved()">
+    <span>🔖</span>
+    المحفوظات
+  </button>
+
+  <button class="nav" data-page="accountPage" onclick="showPage('accountPage')">
+    <span>♙</span>
+    حسابي
+  </button>
+
+</nav>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+
+  <div class="sheet">
+
+    <div class="sheet-head">
+      <h3 id="modalTitle">المصدر</h3>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+
+    <div id="modalBody"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+const QURAN=[
+  {
+    id:"q-20-114",
+    source_id:"src-quran",
+    surah_name:"طه",
+    ayah:114,
+    text:"﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾"
+  },
+  {
+    id:"q-94-5",
+    source_id:"src-quran",
+    surah_name:"الشرح",
+    ayah:5,
+    text:"﴿فَإِنَّ مَعَ الْعُسْرِ يُسْرًا﴾"
+  },
+  {
+    id:"q-94-6",
+    source_id:"src-quran",
+    surah_name:"الشرح",
+    ayah:6,
+    text:"﴿إِنَّ مَعَ الْعُسْرِ يُسْرًا﴾"
+  }
+];
+
+const HADITH=[
+  {
+    id:"h-bukhari-71",
+    source_id:"src-bukhari",
+    book_id:"bukhari",
+    text:"من يرد الله به خيرًا يفقهه في الدين",
+    narrator:"معاوية رضي الله عنه",
+    reference:"صحيح البخاري 71",
+    keys:["من يرد الله به خيرا يفقهه في الدين","يفقهه في الدين"]
+  },
+  {
+    id:"h-bukhari-5027",
+    source_id:"src-bukhari",
+    book_id:"bukhari",
+    text:"خيركم من تعلم القرآن وعلمه",
+    narrator:"عثمان بن عفان رضي الله عنه",
+    reference:"صحيح البخاري 5027",
+    keys:["خيركم من تعلم القرآن وعلمه","تعلم القرآن وعلمه"]
+  },
+  {
+    id:"h-muslim-2699",
+    source_id:"src-muslim",
+    book_id:"muslim",
+    text:"ومن سلك طريقًا يلتمس فيه علمًا سهّل الله له به طريقًا إلى الجنة",
+    narrator:"أبو هريرة رضي الله عنه",
+    reference:"صحيح مسلم 2699",
+    keys:["ومن سلك طريقا يلتمس فيه علما","سلك طريقا يلتمس فيه علما"]
+  }
+];
+
+const BOOKS=[
+  {
+    book_id:"bukhari",
+    source_id:"src-bukhari",
+    title:"صحيح البخاري",
+    author:"الإمام محمد بن إسماعيل البخاري",
+    icon:"📗",
+    category:"حديث"
+  },
+  {
+    book_id:"muslim",
+    source_id:"src-muslim",
+    title:"صحيح مسلم",
+    author:"الإمام مسلم بن الحجاج",
+    icon:"📘",
+    category:"حديث"
+  },
+  {
+    book_id:"muwatta",
+    source_id:"src-muwatta",
+    title:"الموطأ",
+    author:"الإمام مالك بن أنس",
+    icon:"📕",
+    category:"حديث وفقه"
+  },
+  {
+    book_id:"ibn-kathir",
+    source_id:"src-ibn-kathir",
+    title:"تفسير القرآن العظيم",
+    author:"الحافظ ابن كثير",
+    icon:"📙",
+    category:"تفسير"
+  }
+];
+
+const home=document.getElementById("home");
+const pages=[...document.querySelectorAll(".page")];
+
+function normalize(text){
+  return (text||"")
+    .replace(/[ًٌٍَُِّْـ]/g,"")
+    .replace(/[﴿﴾]/g,"")
+    .trim()
+    .toLowerCase();
+}
+
+function showPage(id){
+  home.style.display="none";
+  pages.forEach(p=>p.classList.remove("active"));
+  const page=document.getElementById(id);
+  if(page) page.classList.add("active");
+
+  document.querySelectorAll(".nav").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.page===id);
+  });
+
+  if(id==="libraryPage") renderBooks();
+  if(id==="quranPage") renderQuran();
+  if(id==="hadithPage") renderHadith();
+
+  window.scrollTo(0,0);
+}
+
+function goHome(){
+  pages.forEach(p=>p.classList.remove("active"));
+  home.style.display="block";
+
+  document.querySelectorAll(".nav").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.page==="home");
+  });
+
+  window.scrollTo(0,0);
+}
+
+function findQuran(q){
+  q=normalize(q);
+  return QURAN.filter(x=>
+    normalize(x.text).includes(q) ||
+    q.includes(normalize(x.text)) ||
+    normalize(x.surah_name).includes(q)
+  );
+}
+
+function findHadith(q){
+  q=normalize(q);
+  return HADITH.filter(x=>
+    normalize(x.text).includes(q) ||
+    q.includes(normalize(x.text)) ||
+    x.keys.some(k=>normalize(k).includes(q)||q.includes(normalize(k)))
+  );
+}
+
+function findBooks(q){
+  q=normalize(q);
+  return BOOKS.filter(x=>
+    normalize(x.title+" "+x.author+" "+x.category).includes(q)
+  );
+}
+
+function runMainSearch(){
+  const q=document.getElementById("mainSearch").value.trim();
+  showPage("searchPage");
+  document.getElementById("searchInput").value=q;
+  globalSearch();
+}
+
+function globalSearch(){
+  const q=document.getElementById("searchInput").value.trim();
+  const box=document.getElementById("searchResult");
+  box.style.display="block";
+
+  if(!q){
+    box.className="result warning";
+    box.textContent="اكتب عبارة للبحث.";
+    return;
+  }
+
+  const qr=findQuran(q);
+  const hd=findHadith(q);
+  const bk=findBooks(q);
+
+  if(!qr.length&&!hd.length&&!bk.length){
+    box.className="result warning";
+    box.innerHTML="<b>مصادر غير كافية.</b><br>لم نجد نتيجة موثقة في البيانات الحالية.";
+    return;
+  }
+
+  box.className="result";
+
+  let html="";
+
+  qr.forEach(x=>{
+    html+=`
+      <div class="source">
+        <span class="badge">قرآن</span><br>
+        <b style="font-size:18px">${x.text}</b><br>
+        سورة ${x.surah_name} · الآية ${x.ayah}<br>
+        source_id: ${x.source_id}
+      </div>
+    `;
+  });
+
+  hd.forEach(x=>{
+    html+=`
+      <div class="source">
+        <span class="badge">حديث</span><br>
+        <b>${x.text}</b><br>
+        الراوي: ${x.narrator}<br>
+        المرجع: ${x.reference}<br>
+        book_id: ${x.book_id}
+      </div>
+    `;
+  });
+
+  bk.forEach(x=>{
+    html+=`
+      <div class="source">
+        <b>📚 ${x.title}</b><br>
+        ${x.author}<br>
+        <button class="btn secondary" onclick="openBook('${x.book_id}')">
+          فتح الكتاب
+        </button>
+      </div>
+    `;
+  });
+
+  box.innerHTML=html;
+}
+
+function answerQuestion(){
+  const q=document.getElementById("askInput").value.trim();
+  const box=document.getElementById("askResult");
+  box.style.display="block";
+
+  if(!q){
+    box.className="result warning";
+    box.textContent="اكتب سؤالك أولًا.";
+    return;
+  }
+
+  const qr=findQuran(q);
+  const hd=findHadith(q);
+
+  if(qr.length){
+    const x=qr[0];
+    box.className="result";
+    box.innerHTML=`
+      <span class="badge">موثق مباشرة</span><br>
+      <b>${x.text}</b><br>
+      سورة ${x.surah_name} · الآية ${x.ayah}
+    `;
+    return;
+  }
+
+  if(hd.length){
+    const x=hd[0];
+    box.className="result";
+    box.innerHTML=`
+      <span class="badge">موثق في المصدر</span><br>
+      <b>${x.text}</b><br>
+      الراوي: ${x.narrator}<br>
+      ${x.reference}
+    `;
+    return;
+  }
+
+  box.className="result warning";
+  box.innerHTML="<b>مصادر غير كافية.</b><br>لن ينشئ سَنَد جوابًا شرعيًا بلا مصدر.";
+}
+
+function presetAsk(t){
+  showPage("askPage");
+  document.getElementById("askInput").value=t;
+  answerQuestion();
+}
+
+function verifyText(){
+  const q=document.getElementById("verifyInput").value.trim();
+  const box=document.getElementById("verifyResult");
+  box.style.display="block";
+
+  if(!q){
+    box.className="result warning";
+    box.textContent="ألصق النص أولًا.";
+    return;
+  }
+
+  const qr=findQuran(q);
+  const hd=findHadith(q);
+
+  if(qr.length){
+    box.className="result";
+    box.innerHTML="✅ وُجد أصل قرآني مطابق.<br>"+qr[0].text;
+    return;
+  }
+
+  if(hd.length){
+    box.className="result";
+    box.innerHTML="✅ وُجد أصل في قاعدة الحديث الحالية.<br>"+hd[0].reference;
+    return;
+  }
+
+  box.className="result warning";
+  box.innerHTML="⚠️ لم نعثر على مطابق. وهذا لا يعني تلقائيًا أن النص باطل.";
+}
+
+function renderBooks(){
+  const q=normalize(document.getElementById("bookSearch").value);
+  let html="";
+
+  BOOKS.forEach(b=>{
+    if(!q||normalize(b.title+" "+b.author+" "+b.category).includes(q)){
+      html+=`
+        <div class="card book">
+          <div class="cover">${b.icon}</div>
+          <div>
+            <h4>${b.title}</h4>
+            <p>${b.author}</p>
+          </div>
+          <button class="open" onclick="openBook('${b.book_id}')">فتح</button>
+        </div>
+      `;
+    }
+  });
+
+  document.getElementById("booksList").innerHTML=
+    html||'<div class="card">لا توجد نتيجة.</div>';
+}
+
+function openBook(id){
+  const b=BOOKS.find(x=>x.book_id===id);
+  if(!b)return;
+
+  document.getElementById("modalTitle").textContent=b.title;
+
+  document.getElementById("modalBody").innerHTML=`
+    <div class="card">
+      <h3>${b.title}</h3>
+      <p><b>${b.author}</b></p>
+      <p>التصنيف: ${b.category}</p>
+
+      <div class="source">
+        book_id: ${b.book_id}<br>
+        source_id: ${b.source_id}<br><br>
+        تم فتح بيانات الكتاب بنجاح.
+        النص الكامل سيُربط بقاعدة البيانات في المرحلة التالية.
+      </div>
+
+      <button class="btn secondary" onclick="saveItem('${b.title.replace(/'/g,"")}')">
+        🔖 حفظ الكتاب
+      </button>
+    </div>
+  `;
+
+  document.getElementById("modal").classList.add("show");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+function renderQuran(){
+  let html="";
+
+  QURAN.forEach(x=>{
+    html+=`
+      <div class="card">
+        <span class="badge">موثق</span>
+        <div style="font-size:21px;line-height:1.9">${x.text}</div>
+        <div class="source">
+          سورة ${x.surah_name} · الآية ${x.ayah}<br>
+          source_id: ${x.source_id}
+        </div>
+        <button class="btn secondary" onclick="saveItem('${x.surah_name} ${x.ayah}')">
+          🔖 حفظ
+        </button>
+      </div>
+    `;
+  });
+
+  document.getElementById("quranList").innerHTML=html;
+}
+
+function renderHadith(){
+  let html="";
+
+  HADITH.forEach(x=>{
+    html+=`
+      <div class="card">
+        <span class="badge">موثق</span>
+        <div style="font-size:18px;line-height:1.8">${x.text}</div>
+        <div class="source">
+          الراوي: ${x.narrator}<br>
+          المرجع: ${x.reference}<br>
+          book_id: ${x.book_id}
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("hadithList").innerHTML=html;
+}
+
+function searchHadith(){
+  const q=document.getElementById("hadithInput").value.trim();
+  const box=document.getElementById("hadithResult");
+  box.style.display="block";
+
+  if(!q){
+    box.className="result warning";
+    box.textContent="اكتب جزءًا من الحديث.";
+    return;
+  }
+
+  const r=findHadith(q);
+
+  if(!r.length){
+    box.className="result warning";
+    box.textContent="لم توجد نتيجة في الأحاديث الحالية.";
+    return;
+  }
+
+  box.className="result";
+  box.innerHTML=r.map(x=>`
+    <b>${x.text}</b><br>
+    ${x.reference}<br><br>
+  `).join("");
+}
+
+function fiqhTopic(topic){
+  const box=document.getElementById("fiqhResult");
+  box.style.display="block";
+  box.className="result warning";
+  box.innerHTML=`
+    <b>${topic}</b><br><br>
+    هذا القسم جاهز تقنيًا، لكن لم نضع فيه أحكامًا مذهبية بلا مصدر.
+    سيتم ربطه بكتب الفقه وقاعدة البيانات لاحقًا.
+  `;
+}
+
+function compareOpinions(){
+  const q=document.getElementById("compareInput").value.trim();
+  const box=document.getElementById("compareResult");
+  box.style.display="block";
+
+  if(!q){
+    box.className="result warning";
+    box.textContent="اكتب المسألة أولًا.";
+    return;
+  }
+
+  box.className="result warning";
+  box.innerHTML=`
+    المقارنة الفقهية تحتاج قاعدة مصادر موثقة.
+    لن ينسب سَنَد قولًا لمذهب دون نص ومصدر.
+  `;
+}
+
+function saveItem(text){
+  const saved=JSON.parse(localStorage.getItem("sanadSaved")||"[]");
+
+  if(!saved.includes(text)){
+    saved.push(text);
+  }
+
+  localStorage.setItem("sanadSaved",JSON.stringify(saved));
+  alert("تم الحفظ.");
+}
+
+function openSaved(){
+  showPage("savedPage");
+  renderSaved();
+}
+
+function renderSaved(){
+  const saved=JSON.parse(localStorage.getItem("sanadSaved")||"[]");
+  const list=document.getElementById("savedList");
+
+  if(!saved.length){
+    list.innerHTML='<div class="card">لا توجد محفوظات بعد.</div>';
+    return;
+  }
+
+  list.innerHTML=saved.map((x,i)=>`
+    <div class="card">
+      🔖 ${x}
+      <button class="btn secondary" onclick="removeSaved(${i})">حذف</button>
+    </div>
+  `).join("");
+}
+
+function removeSaved(i){
+  const saved=JSON.parse(localStorage.getItem("sanadSaved")||"[]");
+  saved.splice(i,1);
+  localStorage.setItem("sanadSaved",JSON.stringify(saved));
+  renderSaved();
+}
+
+goHome();
+
+</script>
+
+</body>
+</html>
